@@ -23,6 +23,7 @@ function App() {
     return (
         <div className="container">
             <h1>KAE ToolBox</h1>
+
             <div className="form-group">
                 <label htmlFor="nombrePersonnages">Nombre de personnages :</label>
                 <input

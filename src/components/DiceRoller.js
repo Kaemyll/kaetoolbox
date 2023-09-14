@@ -5,7 +5,7 @@ const DiceRoller = (formule) => {
     const match = formule.match(regex);
 
     if (!match){
-        // formule ne correspond pas au pattern attendu
+        // formule ne correspond pas au modèle attendu
         return "Formule invalide. utilisez le format {x}d{y} et/ou +{z}."
     }
 
@@ -19,15 +19,15 @@ const DiceRoller = (formule) => {
     const z = modificateur ? parseInt(modificateur) : 0;
 
     // Effectuez le lancer de dés
-    let resultat = 0;
+    let result = 0;
     for (let i = 0; i < x; i++) {
-        resultat += Math.floor(Math.random() * y) + 1;
+        result += Math.floor(Math.random() * y) + 1;
     }
 
     // Ajoutez le modificateur
-    resultat += z;
+    result += z;
 
-    return resultat;
+    return result;
 };
 
 export default DiceRoller;
