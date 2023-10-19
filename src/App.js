@@ -1,48 +1,35 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CharacterColumn from './components/CharacterColumn';
+import React from 'react';
+
+import NavigationBar from "./components/NavigationBar";
+import Sidebar from "./components/SideBar";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Main from "./components/Main";
+import Home from "./components/Home";
 
 function App() {
-    const [nombrePersonnages, setNombrePersonnages] = useState('');
-    const [colonnes, setColonnes] = useState([]);
-
-    const creerColonnes = () => {
-        const nombre = parseInt(nombrePersonnages, 10);
-        const nouvellesColonnes = [];
-
-        for (let i = 1; i <= nombre; i++) {
-            nouvellesColonnes.push(
-                <CharacterColumn key={i} characterNumber={i} />
-            );
-        }
-
-        setColonnes(nouvellesColonnes);
-        setNombrePersonnages(''); // Réinitialise le champ de saisie après la création des colonnes
-    };
-
     return (
-        <div className="container">
-            <h1>KAE ToolBox</h1>
+        <BrowserRouter>
+            <div>
+                {/* Your React components go here */}
+                <NavigationBar />
+                <div className="container">
+                    <div className="row">
+                        {/* Include the Sidebar component here */}
+                        <Sidebar />
+                        <Routes>
+                            {/* Other routes */}
+                            <Route path="/" exact component={Home} />
+                            <Route path="/guides-joueurs" component={Main} />
+                            {/* Other routes */}
+                        </Routes>
+                    </div>
+                </div>
+            </div>
+        </BrowserRouter>
 
-            <div className="form-group">
-                <label htmlFor="nombrePersonnages">Nombre de personnages :</label>
-                <input
-                    type="number"
-                    className="form-control"
-                    id="nombrePersonnages"
-                    value={nombrePersonnages}
-                    onChange={(e) => setNombrePersonnages(e.target.value)}
-                />
-            </div>
-            <button className="btn btn-primary" onClick={creerColonnes}>
-                Créer les colonnes
-            </button>
-            <div className="row" id="resultats">
-                {colonnes}
-            </div>
-        </div>
     );
 }
 
 export default App;
+
 

@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* Your custom CSS styles go here */
+
+/* Modern hover effect for navbar links */
+.navbar-nav .nav-link {
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff; /* Change to your desired hover text color */
+  background-color: #007bff; /* Change to your desired hover background color */
+}
+
+
+/* Ensure the sidebar remains fixed */
+aside {
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}
+
+/* Adjust the main content area to account for the fixed sidebar */
+main {
+  margin-left: 260px; /* Adjust as needed */
+}
+
+/* Style the news slider, RPG content, and footer as needed */
+.news-slider {
+  /* Your styles for the news slider */
+}
+
+.rpg-content {
+  /* Your styles for RPG content */
+}
+
+.footer {
+  /* Your styles for the footer */
+}
+
